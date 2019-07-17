@@ -7,7 +7,6 @@ from django.shortcuts import render
 from datetime import datetime
 from posts.models import User
 
-
 posts = [
     {
         'title': 'Mont Blanc',
@@ -64,8 +63,5 @@ users = [
 
 def list_posts(request):
     """List existing posts."""
-    for user in users:
-        objt  = User(**user)
-        objt.save()
-        print(objt.email)
+
     return render(request, 'feed.html', {'posts': posts})
